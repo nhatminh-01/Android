@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    tools:context=".QuestionsActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/top_bar"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_quesID"
+            android:text="1/25"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20 : 15 min"
+            android:id="@+id/tv_timer"
+            android:layout_weight="1"
+            android:textColor="@color/green"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            />
+        <Button
+            app:backgroundTint="@android:color/holo_orange_light"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:id="@+id/submitB"
+            android:layout_weight="1"
+            android:text="Submit"
+            android:background="@drawable/button_border"
+            android:textColor="@color/white"
+            
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:id="@+id/ll4"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar"
+        >
+
+        <TextView
+            android:id="@+id/qa_catName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GK"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+
+            />
+
+        <ImageView
+            app:tint="#FFFFFF"
+            android:id="@+id/qa_bookmarkB"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_bookmark"
+            />
+        <ImageView
+            app:tint="#FFFFFF"
+            android:id="@+id/ques_list_gridB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_right_menu"
+            />
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:id="@+id/ll3"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+            <ImageButton
+                android:id="@+id/prev_quesB"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="2dp"
+                app:srcCompat="@drawable/ic_left"
+                android:background="@color/colorPrimaryDark"
+                />
+
+        <Button
+            android:id="@+id/clear_selB"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@drawable/button_border"
+            android:text="Clear Selection"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/markB"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/button_border"
+            android:text="Mark for review"
+            android:textSize="12dp"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/next_quesB"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="15dp"
+            app:srcCompat="@drawable/ic_right"
+            android:background="@color/colorPrimaryDark"
+            />
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/questions_view"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll4"
+
+        >
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/mark_image"
+        android:src="@drawable/marked"
+        android:elevation="5dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll4"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
